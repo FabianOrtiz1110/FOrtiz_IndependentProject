@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public AudioClip Laser;
+    private AudioSource asPlayer;
     private float HorizontalInput;
     private float VerticalInput;
     public float speed = 10.0f;
@@ -17,10 +19,13 @@ public class PlayerController : MonoBehaviour
 
     private bool isShooting = false; 
     
+    public Animator animator;
+    
     void Update()
     {
         HorizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * HorizontalInput * Time.deltaTime * speed);
+        animator.SetFloat("Speed", Mathf.Max(Mathf.Abs(HorizontalInput), Mathf.Abs(VerticalInput)));
         
         VerticalInput = Input.GetAxis("Vertical");
         transform.Translate(Vector3.up * VerticalInput * Time.deltaTime * speed);
@@ -73,9 +78,15 @@ void StopShooting()
     }
     void Fire()
     {
+        asPlayer.PlayOneShot(Laser, 1.0f);
         Vector3 leftOffset = new Vector3(-0.65f, 0.0f, 0.0f);
         Vector3 rightOffset = new Vector3(0.65f, 0.0f, 0.0f);
         Instantiate(PlayerBullet, transform.position + leftOffset, PlayerBullet.transform.rotation);
         Instantiate(PlayerBullet, transform.position + rightOffset, PlayerBullet.transform.rotation);
     }
+     void Start()
+    {
+        asPlayer = GetComponent<AudioSource>();
+    }
+  
 }

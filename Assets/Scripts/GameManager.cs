@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     {
         float randXPos = Random.Range(-xPosRange, xPosRange);
         int EnemyPrefabIndex = Random.Range(0, EnemyPrefab.Length);
-        Vector3 randPos = new Vector3(randXPos, 0, 23);
+        Vector3 randPos = new Vector3(randXPos, 5.29f, 23);
         Instantiate(EnemyPrefab[EnemyPrefabIndex], randPos,
         EnemyPrefab[EnemyPrefabIndex].transform.rotation);
     }
