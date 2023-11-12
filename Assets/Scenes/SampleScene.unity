@@ -5502,6 +5502,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyPrefab:
   - {fileID: 2793293142350023328, guid: 88b9a437a2cf51f4d84dacfcd0b55032, type: 3}
+  PointBoxPrefab:
+  - {fileID: 1203920829823858754, guid: 987d5282783fd3841ba9e4e2f46a0064, type: 3}
 --- !u!4 &1704273730
 Transform:
   m_ObjectHideFlags: 0
@@ -5510,7 +5512,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704273728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.903305, y: 14.377, z: 15.739027}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5653,6 +5655,8 @@ MonoBehaviour:
   PlayerBullet: {fileID: 295562725207192681, guid: cee3576793e1dc149a68ad2264bf714b, type: 3}
   fireRate: 5
   animator: {fileID: 350039462}
+  level2: 2
+  PointAdded: 0
 --- !u!136 &2073236029
 CapsuleCollider:
   m_ObjectHideFlags: 0

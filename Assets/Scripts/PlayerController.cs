@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     private bool isShooting = false; 
     
     public Animator animator;
+    public int level2= 3;
+    public int PointAdded = 0;
+    bool ExtraShot = false;
     
     void Update()
     {
@@ -83,10 +86,31 @@ void StopShooting()
         Vector3 rightOffset = new Vector3(0.65f, 0.0f, 0.0f);
         Instantiate(PlayerBullet, transform.position + leftOffset, PlayerBullet.transform.rotation);
         Instantiate(PlayerBullet, transform.position + rightOffset, PlayerBullet.transform.rotation);
+
+        if (ExtraShot == true)
+        {
+            Instantiate(PlayerBullet, transform.position, PlayerBullet.transform.rotation);
+        }
     }
      void Start()
     {
         asPlayer = GetComponent<AudioSource>();
     }
-  
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("PointBox"))
+        {
+            PointAdded++;
+            Debug.Log("+1Point");
+        }
+
+        if (PointAdded>= level2)
+        {
+            ExtraShot = true;
+        }
+    }
 }
+
+
+
+

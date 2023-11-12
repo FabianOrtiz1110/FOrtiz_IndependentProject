@@ -9,6 +9,7 @@ TagManager:
   - Projectile
   - Enemy
   - Wall
+  - PointBox
   layers:
   - Default
   - TransparentFX
