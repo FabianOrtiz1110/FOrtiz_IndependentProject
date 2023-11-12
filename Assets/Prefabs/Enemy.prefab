@@ -119,6 +119,7 @@ MonoBehaviour:
   enemyBulletPrefab: {fileID: 2674041257682272160, guid: 45a4a5c4a3312d74ab041a008c0c53fc, type: 3}
   bulletSpeed: 18
   timeBetweenShots: 3
+  Angle: 240
 --- !u!114 &2793293142350023320
 MonoBehaviour:
   m_ObjectHideFlags: 0

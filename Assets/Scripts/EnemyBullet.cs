@@ -17,6 +17,14 @@ public class EnemyBullet : MonoBehaviour
     {
         Destroy(gameObject);
     }
+}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+        Time.timeScale = 0f;
+        Debug.Log("Game Over");
+        }
         
     }
 }

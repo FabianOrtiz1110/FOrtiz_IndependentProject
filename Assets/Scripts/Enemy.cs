@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     public GameObject enemyBulletPrefab;
     public float bulletSpeed = 10.0f;
     public float timeBetweenShots = 12.0f;
-    public float angleInDegrees = 220f;
+    public float Angle = 50f;
     // Start is called before the first frame update
     void Start()
     {
@@ -74,9 +74,10 @@ public class Enemy : MonoBehaviour
     
     void Shoot()
     {      
-        for (int i = 0; i <= 280; angleInDegrees = angleInDegrees + 5 )
+        for (int i = 0; i<=12; i++)
         {
-        Vector3 shootDirection = new Vector3(Mathf.Cos(angleInDegrees * Mathf.Deg2Rad), 0f, Mathf.Sin(angleInDegrees * Mathf.Deg2Rad));
+        float NewAngle = Angle + i * 5;
+        Vector3 shootDirection = new Vector3(Mathf.Cos(NewAngle * Mathf.Deg2Rad), 0f, Mathf.Sin(NewAngle * Mathf.Deg2Rad));
         GameObject bullet = Instantiate(enemyBulletPrefab, transform.position, Quaternion.LookRotation(shootDirection));
         bullet.GetComponent<Rigidbody>().velocity = shootDirection * bulletSpeed;
         }
