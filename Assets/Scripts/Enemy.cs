@@ -45,11 +45,6 @@ public class Enemy : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-        Time.timeScale = 0f;
-        Debug.Log("Game Over");
-        }
 
         if (other.gameObject.CompareTag("Wall"))
             {
@@ -64,10 +59,12 @@ public class Enemy : MonoBehaviour
             HPTaken++;
             Sparks.GetComponent<ParticleSystem>().Play();
             Debug.Log("Bullet Hit");
+            
         }
 
         if (HPTaken>= HP)
         {
+            Score.instance.AddPoint();
             Destroy(gameObject);
         }
     }

@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 2674041257682272162}
   - component: {fileID: 2674041257682272163}
   - component: {fileID: -1525384975198941212}
-  - component: {fileID: 4164172890732073012}
+  - component: {fileID: 795878568635089324}
   m_Layer: 0
   m_Name: EnemyBullet
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,15 +107,15 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2674041257682272160}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &4164172890732073012
+  m_Interpolate: 1
+  m_Constraints: 116
+  m_CollisionDetection: 1
+--- !u!114 &795878568635089324
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,6 +124,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2674041257682272160}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23661e05cf80ad34e8aefc0faf76ee5b, type: 3}
+  m_Script: {fileID: 11500000, guid: 30f7adde4b4b6b745b8aa692a7751dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

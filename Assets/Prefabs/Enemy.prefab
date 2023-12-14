@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   standStillFrames: 690
-  HP: 6
+  HP: 2
   Sparks: {fileID: 6827588153665207997, guid: 39ce57407065ffd45ae7bf40bf9f30c5, type: 3}
   enemyBulletPrefab: {fileID: 2674041257682272160, guid: 45a4a5c4a3312d74ab041a008c0c53fc, type: 3}
   bulletSpeed: 18
